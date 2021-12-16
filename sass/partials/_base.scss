@@ -1,0 +1,32 @@
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient($light, $primary);
+}
+
+.wrapper {
+  flex: 1 0 auto;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 0.6rem 1.6rem;
+  text-transform: uppercase;
+  transition: 250ms ease;
+  cursor: pointer;
+  background: $orange !important;
+  color: $light !important;
+  font-size: 16px;
+  font-weight: 700 !important;
+  border: 3px solid $orange !important;
+  &:hover {
+    background: transparent !important;
+    color: $orange !important;
+    border: 3px solid $orange !important;
+  }
+}

@@ -1,0 +1,37 @@
+$font-family-base: "Poppins", sans-serif;
+$paragraph-size: 16px;
+$font-primary-size: 20px;
+$font-secondary-size: 18px;
+$heading-size: 42px;
+$heading-secondary: 28px;
+
+p {
+  font-size: $paragraph-size;
+  color: $light;
+}
+
+body {
+  font-family: $font-family-base;
+}
+
+h1 {
+  font-size: $heading-size;
+  color: $dark;
+}
+
+h2 {
+  font-size: $heading-size !important;
+  color: $dark;
+  font-weight: 600 !important;
+  margin: auto;
+}
+
+.featured-h {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.login {
+  text-align: center;
+  margin-top: 4rem;
+}

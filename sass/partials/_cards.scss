@@ -1,0 +1,17 @@
+.card {
+  object-fit: cover;
+  border: none !important;
+}
+
+.card-body {
+  .card-title {
+    font-weight: 600;
+    color: $dark;
+    font-size: $font-primary-size;
+  }
+  .card-text {
+    color: $dark;
+    font-weight: 500;
+    font-size: $paragraph-size;
+  }
+}

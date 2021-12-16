@@ -1,0 +1,54 @@
+.jumbotron {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right center;
+  height: 35rem;
+  margin-bottom: 4rem !important;
+
+  .display-4 {
+    color: $dark;
+    font-size: 42px;
+    font-family: $font-family-base;
+    font-weight: 700;
+    width: 35rem;
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: 28px;
+      width: 20rem;
+    }
+  }
+  .lead {
+    width: 35rem;
+    margin: 1rem 0 2rem 0;
+    font-size: 22px;
+    font-weight: 500;
+    color: $dark;
+
+    @media (max-width: $breakpoint-sm) {
+      width: 18rem;
+      font-size: 18px;
+    }
+  }
+  .main-btn {
+    background: $orange;
+    color: $light;
+    font-size: 16px;
+    font-weight: 700;
+    border: 3px solid $orange;
+    padding: 0.6rem 1.6rem;
+    text-transform: uppercase;
+    transition: 250ms ease;
+    cursor: pointer;
+    text-decoration: none !important;
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: 12px;
+      padding: 0.5rem 0.2rem;
+    }
+
+    &:hover {
+      background: transparent;
+      color: $orange;
+    }
+  }
+}

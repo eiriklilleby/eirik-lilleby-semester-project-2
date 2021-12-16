@@ -1,0 +1,16 @@
+.breadcrumb-container {
+  margin-top: 2rem;
+  nav {
+    -webkit-box-shaodw: none !important;
+    box-shadow: none;
+  }
+  .breadcrumb {
+    padding: 0 !important;
+    background: transparent !important;
+    height: 4rem;
+  }
+  .breadcrumb-item a {
+    color: $dark !important;
+    font-size: $paragraph-size;
+  }
+}
