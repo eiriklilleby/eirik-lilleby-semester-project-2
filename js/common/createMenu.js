@@ -1,4 +1,5 @@
 import { getUsername } from "../utils/storage.js";
+import { logout } from "../utils/storage.js";
 
 export default function createMenu() {
   const { pathname } = document.location;
@@ -15,7 +16,7 @@ export default function createMenu() {
       pathname === "/add.html" ? "active" : ""
     }" href="add.html">Add product
               </a>
-    <span class="user">${username}<i class="fas fa-user ml-1"></i></span>`;
+    <span class="user">Logout<i class="fas fa-user ml-1"></i></span>`;
   }
 
   const navBar = document.querySelector(".navbar");
@@ -62,6 +63,9 @@ export default function createMenu() {
           </ul>
         </div>
       </div>
-    </nav>
   `;
+  if (username) {
+    const logoutLink = document.querySelector(".user");
+    logoutLink.addEventListener("click", logout);
+  }
 }

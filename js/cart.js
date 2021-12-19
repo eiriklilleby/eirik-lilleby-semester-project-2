@@ -1,5 +1,4 @@
-// import { clearProduct } from "./components/clearButton.js";
-import { getExistingProd } from "./utils/cartFunctions.js";
+import { getExistingProd, sumCart } from "./utils/cartFunctions.js";
 import { displayMessage } from "./common/displayMessage.js";
 import createMenu from "./common/createMenu.js";
 
@@ -15,6 +14,8 @@ if (products.length === 0) {
     "There is no product in the cart.",
     ".cart-container"
   );
+} else {
+  sumCart();
 }
 
 products.forEach((product) => {
@@ -28,31 +29,12 @@ products.forEach((product) => {
        </div>
        <div class="text-container">
         <h4 class="product-title">${product.title}</h4>
-        <a href="details.html?id=${product.id}" class="product-link">View product</a>
+        <a href="details.html?id=${product.id}" class="product-link btn btn-primary">View product</a>
         </div>
+      <div class="price-container">
+        <p class="price-text">Price:</p>
         <p class="product-price">$${product.price}</p>
-        <i class="fas fa-times clear-btn"></i>
+        </div>
     </div>
     `;
-  // function clearButton() {
-  //   const clearBtn = document.querySelectorAll(".clear-btn");
-
-  //   console.log(clearBtn);
-
-  //   clearBtn.forEach((product) => {
-  //     product.addEventListener("click", clearProduct);
-  //     console.log(product);
-  //   });
-  // }
-  // clearButton();
 });
-
-{
-  /* <div class="product-info-container">
-  <p class="text-description">Description</p>
-  <p class="text-price">price</p>
-  <div class="line-container">
-    <hr />
-  </div>
-</div>; */
-}

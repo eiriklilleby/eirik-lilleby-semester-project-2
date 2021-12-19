@@ -3,13 +3,15 @@ const container = document.querySelector(".product-container");
 export function createProductHtml(product) {
   return `<div class="col-sm mb-4">
           <div class="card m-auto" style="width: 21.87rem">
+           <a href="details.html?id=${product.id}" >
             <img src="${product.image.url}" class="card-img-top" alt="${product.image.alternativeText}" />
+            <a/>
             <div class="card-body">
               <h5 class="card-title">${product.title}</h5>
               <p class="card-text">
                $${product.price} 
               </p>
-              <a href="details.html?id=${product.id}" class="btn btn-primary">View product</a>
+              <a href="details.html?id=${product.id}" class="btn btn-primary mt-3">View product</a>
             </div>
           </div>
         </div>

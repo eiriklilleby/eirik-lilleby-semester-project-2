@@ -14,9 +14,11 @@ export function handleClick() {
   if (!productExist) {
     const product = { id: id, title: title, image: image, price: price };
     currentProds.push(product);
+    this.replaceChildren("Remove from cart");
     saveProds(currentProds);
   } else {
     const newProds = currentProds.filter((prod) => prod.id !== id);
     saveProds(newProds);
+    this.replaceChildren("Add to cart");
   }
 }

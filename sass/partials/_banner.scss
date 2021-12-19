@@ -24,7 +24,7 @@
     font-weight: 500;
     color: $dark;
 
-    @media (max-width: $breakpoint-sm) {
+    @media (max-width: $breakpoint-md) {
       width: 18rem;
       font-size: 18px;
     }

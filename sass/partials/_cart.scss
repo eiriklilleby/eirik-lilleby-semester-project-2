@@ -1,57 +1,103 @@
-.product-info-container {
+.header-container {
   display: flex;
+  justify-content: space-between;
+  margin: 3rem 0 0rem 0;
 
-  .text-description {
-    margin-left: 13rem;
-  }
-
-  .text-price {
-    margin-left: 35rem;
-  }
-  p {
+  .amount {
     color: $dark;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .total {
+    .total-price {
+      color: $green;
+    }
+  }
+}
+
+.line-container {
+  hr {
+    margin-top: 0rem;
+    margin-bottom: 2rem;
   }
 }
 
 .shopping-h {
   font-size: $heading-secondary;
-  text-align: center;
-  margin: 4rem 0;
 }
 
 .cart-container {
   .product {
     background: $light;
     display: flex;
-    width: 80%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     margin-bottom: 1rem;
+    height: 10rem;
   }
 
   .img-container {
     width: 20rem;
-    height: 10rem;
-    object-fit: cover;
+    height: auto;
 
     img {
       height: 100%;
       width: 100%;
+      object-fit: cover;
     }
   }
   .text-container {
     width: 50rem;
     padding: 1rem;
+
+    @media (max-width: $breakpoint-sm) {
+      width: 10rem;
+    }
+
     .product-title {
       color: $dark;
+      font-size: 20px;
+      font-weight: 600;
+      @media (max-width: $breakpoint-md) {
+        font-size: 14px;
+      }
     }
   }
-  .product-price {
-    color: $dark;
-    padding: 1rem;
+  .price-container {
+    display: flex;
+
+    .price-text {
+      color: $dark;
+      padding: 1rem 0;
+      margin-right: 0.5rem;
+      font-size: 16px;
+      font-weight: 600;
+      @media (max-width: $breakpoint-sm) {
+        font-size: 14px;
+      }
+    }
+
+    .product-price {
+      color: $green;
+      font-weight: 600;
+      padding: 1rem 0;
+      font-size: 16px;
+      margin-right: 2rem;
+
+      @media (max-width: $breakpoint-sm) {
+        font-size: 14px;
+      }
+    }
   }
-  .clear-btn {
-    font-size: 24px;
-    color: $dark;
-    margin: 1rem 1rem 0rem 1rem;
-    cursor: pointer;
+
+  .product-link {
+    width: 10rem;
+    margin-top: 3rem;
+    padding: 0.2rem;
+    font-size: 14px;
+    @media (max-width: $breakpoint-md) {
+      width: 8rem;
+      font-size: 12px;
+    }
   }
 }

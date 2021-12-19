@@ -1,23 +1,24 @@
 .message {
-  border: 1px solid lightgrey;
+  border: 2px solid lightgrey;
   padding: 1rem;
   background: rgba(0, 0, 0, 0.01);
+  margin-bottom: 1rem;
 }
 
 .message.error {
-  border-color: red;
-  color: red;
-  background: rgba(255, 0, 0, 0.05);
+  border-color: $red;
+  color: $light;
+  background: $red;
 }
 
 .message.warning {
-  border-color: yellow;
-  color: yellow;
-  background: rgba(255, 0, 0, 0.05);
+  border-color: $yellow;
+  color: $light;
+  background: $yellow;
 }
 
 .message.success {
-  border-color: green;
-  color: green;
-  background: rgba(255, 0, 0, 0.05);
+  border-color: $green;
+  color: $light;
+  background: $green;
 }

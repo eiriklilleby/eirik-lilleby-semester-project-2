@@ -1,13 +1,21 @@
-import { displayMessage } from "./common/displayMessage.js";
 import { baseUrl } from "./settings/api.js";
 import createMenu from "./common/createMenu.js";
+import { displayMessage } from "./common/displayMessage.js";
+import { deleteButton } from "./components/deleteProduct.js";
 
 createMenu();
+
+const queryString = document.location.search;
+const params = new URLSearchParams(queryString);
+const id = params.get("id");
+
+const productUrl = baseUrl + "products/" + id;
 
 const form = document.querySelector("form");
 const title = document.querySelector("#title");
 const price = document.querySelector("#price");
 const description = document.querySelector("#description");
+const idInput = document.querySelector("#id");
 const featured = document.querySelector("#featured");
 const message = document.querySelector(".message-container");
 
@@ -21,6 +29,31 @@ $(document).ready(function () {
   });
 });
 
+(async function () {
+  try {
+    const response = await fetch(productUrl);
+    const details = await response.json();
+
+    console.log(details);
+
+    title.value = details.title;
+    price.value = details.price;
+    description.value = details.description;
+    idInput.value = details.id;
+    featured.value = details.featured;
+
+    deleteButton(details.id);
+
+    featured.value = details.featured;
+  } catch (error) {
+    displayMessage(
+      "error",
+      "product info error from server",
+      ".message-container"
+    );
+  }
+})();
+
 form.addEventListener("submit", submitForm);
 
 function submitForm(event) {
@@ -32,6 +65,7 @@ function submitForm(event) {
   const priceValue = parseFloat(price.value);
   const descriptionValue = description.value.trim();
   const featuredValue = featured.value;
+  const idValue = idInput.value;
 
   const request = new XMLHttpRequest();
 
@@ -40,6 +74,8 @@ function submitForm(event) {
   const formElements = form.elements;
 
   const data = {};
+
+  const url = baseUrl + "products/" + id;
 
   for (let i = 0; i < formElements.length; i++) {
     const currentElement = formElements[i];
@@ -52,8 +88,6 @@ function submitForm(event) {
       }
     }
   }
-
-  request.open("POST", `${baseUrl}products`);
 
   request.onreadystatechange = function () {
     if (request.readyState === 4) {
@@ -71,6 +105,10 @@ function submitForm(event) {
     }
   };
 
+  request.open("PUT", `${url}`);
+
+  console.log(request.open);
+
   formData.append("data", JSON.stringify(data));
 
   request.send(
@@ -78,7 +116,8 @@ function submitForm(event) {
     titleValue,
     priceValue,
     descriptionValue,
-    featuredValue
+    featuredValue,
+    idValue
   );
 
   if (isNaN(priceValue)) {
@@ -89,6 +128,5 @@ function submitForm(event) {
     );
   }
 
-  displayMessage("success", "Product created", ".message-container");
-  form.reset();
+  return displayMessage("success", "Product updated", ".message-container");
 }

@@ -1,6 +1,27 @@
+import { getExistingProd } from "../utils/cartFunctions.js";
+import { getUsername } from "../utils/storage.js";
+
 const detailContainer = document.querySelector(".details-container");
 
+const products = getExistingProd();
+
+const username = getUsername();
+
 export function createDetailsHtml(product) {
+  let btnText = "Add to cart";
+
+  const doesObjectExist = products.find((prods) => prods.id === product.id);
+
+  if (doesObjectExist) {
+    btnText = "Remove from cart";
+  }
+
+  let authLink = "";
+
+  if (username) {
+    authLink = ` <a href="edit.html?id=${product.id}" class="btn btn-primary mb-4">Edit product</a>`;
+  }
+
   return `
    <div class="container breadcrumb-container">
         <nav aria-label="breadcrumb">
@@ -10,6 +31,7 @@ export function createDetailsHtml(product) {
             <li class="breadcrumb-item active" aria-current="page">${product.title}</li>
           </ol>
         </nav>
+      ${authLink}
       </div>
      <div class="img-container">
         <img
@@ -23,11 +45,11 @@ export function createDetailsHtml(product) {
         <hr />
         <p class="product-info">${product.description}</p>
         <div class="button-container">
-          <a href="#" class="btn btn-primary cart-btn" data-id="${product.id}" data-title="${product.title}" data-image="${product.image.url}" data-price="${product.price}">Add to cart</a>
-          <a href="#" class="btn btn-secondary">View cart</a>
+           <button class="btn btn-primary cart-btn" data-id="${product.id}" data-title="${product.title}" data-image="${product.image.url}" data-price="${product.price}">${btnText}</button>
+          <a href="cart.html" class="btn btn-secondary">View cart</a>
         </div>
       </div>
-
+      
     `;
 }
 

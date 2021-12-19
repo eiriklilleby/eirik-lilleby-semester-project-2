@@ -30,3 +30,14 @@ body {
     border: 3px solid $orange !important;
   }
 }
+
+.delete {
+  background: $red !important;
+  border: 3px solid $red !important;
+
+  &:hover {
+    background: transparent !important;
+    color: $red !important;
+    border: 3px solid $red !important;
+  }
+}

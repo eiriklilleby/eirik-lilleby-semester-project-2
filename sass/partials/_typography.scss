@@ -2,7 +2,7 @@ $font-family-base: "Poppins", sans-serif;
 $paragraph-size: 16px;
 $font-primary-size: 20px;
 $font-secondary-size: 18px;
-$heading-size: 42px;
+$heading-size: 36px;
 $heading-secondary: 28px;
 
 p {
@@ -34,4 +34,8 @@ h2 {
 .login {
   text-align: center;
   margin-top: 4rem;
+}
+
+.product-h1 {
+  font-size: $heading-size;
 }

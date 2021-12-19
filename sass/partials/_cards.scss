@@ -1,6 +1,7 @@
 .card {
   object-fit: cover;
   border: none !important;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .card-body {
@@ -10,8 +11,8 @@
     font-size: $font-primary-size;
   }
   .card-text {
-    color: $dark;
-    font-weight: 500;
+    color: $green;
+    font-weight: 600;
     font-size: $paragraph-size;
   }
 }
