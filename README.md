@@ -26,10 +26,6 @@ git clone https://github.com/eiriklilleby/eirik-lilleby-semester-project-2.git
 
 2. Run the project in live server etc:
 
-```
-npm install
-```
-
 ## Contact
 
 [My LinkedIn page](https://www.linkedin.com/in/eirik-lilleby-898b581b4/)
