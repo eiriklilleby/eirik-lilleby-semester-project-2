@@ -3,6 +3,8 @@ import { getUsername } from "../utils/storage.js";
 
 const detailContainer = document.querySelector(".details-container");
 
+const title = document.querySelector("title");
+
 const products = getExistingProd();
 
 const username = getUsername();
@@ -11,6 +13,8 @@ export function createDetailsHtml(product) {
   let btnText = "Add to cart";
 
   const doesObjectExist = products.find((prods) => prods.id === product.id);
+
+  title.innerHTML = `Wintly | ${product.title}`;
 
   if (doesObjectExist) {
     btnText = "Remove from cart";
